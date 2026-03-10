@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+
+<title>Login - Suraksha QR</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+background:#eef2f7;
+display:flex;
+flex-direction:column;
+min-height:100vh;
+}
+
+/* HEADER */
+
+.header{
+background:linear-gradient(135deg,#4facfe,#00c6ff);
+color:white;
+padding:15px;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+box-shadow:0 3px 10px rgba(0,0,0,0.2);
+}
+
+.header img{
+width:40px;
+height:40px;
+border-radius:8px;
+}
+
+.header h1{
+margin:0;
+font-size:20px;
+}
+
+/* MAIN AREA */
+
+.main{
+flex:1;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+/* LOGIN CARD */
+
+.phone{
+width:100%;
+max-width:400px;
+background:white;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* CARD HEADER */
+
+.card-header{
+background:linear-gradient(135deg,#4facfe,#00f2fe);
+color:white;
+text-align:center;
+padding:22px;
+}
+
+.card-header h2{
+margin:0;
+}
+
+.card-header p{
+margin:5px 0 0 0;
+font-size:13px;
+}
+
+/* FORM */
+
+.section{
+padding:25px;
+}
+
+form p{
+text-align:left;
+font-size:14px;
+margin-bottom:10px;
+}
+
+input{
+width:100%;
+padding:12px;
+margin-top:6px;
+margin-bottom:15px;
+border-radius:10px;
+border:1px solid #ccc;
+font-size:14px;
+}
+
+/* BUTTON */
+
+.btn{
+width:100%;
+padding:14px;
+border:none;
+border-radius:25px;
+font-size:16px;
+cursor:pointer;
+color:white;
+background:#1976d2;
+font-weight:600;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* LINK */
+
+.link{
+text-align:center;
+margin-top:15px;
+}
+
+.link a{
+text-decoration:none;
+color:#1976d2;
+font-weight:600;
+}
+
+/* FOOTER */
+
+.footer{
+background:#4facfe;
+color:white;
+text-align:center;
+padding:12px;
+font-size:13px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<div class="header">
+
+<img src="{% static 'logo.jpeg' %}">
+
+<h1>Suraksha QR</h1>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="main">
+
+<div class="phone">
+
+<div class="card-header">
+
+<h2>🔐 Login</h2>
+<p>Suraksha QR System</p>
+
+</div>
+
+<div class="section">
+
+<form method="post">
+
+{% csrf_token %}
+
+{{ form.as_p }}
+
+<button class="btn" type="submit">
+Login
+</button>
+
+</form>
+
+<div class="link">
+
+<p>Don't have an account?</p>
+
+<a href="/register/">Register Here</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
+
+<div class="footer">
+
+© 2026 Suraksha QR System | Developed By Momin Ramjan
+
+</div>
+
+</body>
+</html>

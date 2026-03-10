@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Edit Profile - Suraksha QR</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+background:#eef2f7;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+}
+
+.phone{
+width:95%;
+max-width:420px;
+background:white;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 15px 40px rgba(0,0,0,0.2);
+}
+
+/* HEADER */
+
+.header{
+background:linear-gradient(135deg,#4facfe,#00c6ff);
+color:white;
+padding:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.header h2{
+margin:0;
+font-size:18px;
+}
+
+.back{
+color:white;
+text-decoration:none;
+font-size:14px;
+}
+
+/* FORM */
+
+.form{
+padding:20px;
+}
+
+.input{
+width:100%;
+padding:10px;
+margin:6px 0 12px 0;
+border:1px solid #ccc;
+border-radius:8px;
+font-size:14px;
+}
+
+label{
+font-size:13px;
+font-weight:600;
+}
+
+/* BUTTON */
+
+.btn{
+width:100%;
+padding:13px;
+background:#4CAF50;
+border:none;
+border-radius:25px;
+color:white;
+font-size:15px;
+cursor:pointer;
+font-weight:bold;
+}
+
+/* FOOTER */
+
+.footer{
+text-align:center;
+padding:12px;
+font-size:12px;
+background:#fafafa;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="phone">
+
+<!-- HEADER -->
+
+<div class="header">
+
+<a href="/dashboard/" class="back">⬅ Back</a>
+
+<h2>Edit Profile</h2>
+
+</div>
+
+<!-- FORM -->
+
+<form method="POST" enctype="multipart/form-data">
+
+{% csrf_token %}
+
+<div class="form">
+
+<label>Owner Name</label>
+<input class="input" type="text" name="owner" value="{{p.owner_name}}">
+
+<label>Vehicle Number</label>
+<input class="input" type="text" name="vehicle" value="{{p.vehicle_number}}">
+
+<label>Vehicle Model</label>
+<input class="input" type="text" name="model" value="{{p.vehicle_model}}">
+
+<label>Driving License</label>
+<input class="input" type="text" name="license" value="{{p.license_number}}">
+
+<label>Insurance Number</label>
+<input class="input" type="text" name="insurance" value="{{p.insurance_number}}">
+
+<label>Blood Group</label>
+<input class="input" type="text" name="blood" value="{{p.blood_group}}">
+
+<label>Medical Notes</label>
+<input class="input" type="text" name="notes" value="{{p.medical_notes}}">
+
+<label>Family Contact Name</label>
+<input class="input" type="text" name="fname" value="{{p.family_name}}">
+
+<label>Family Phone</label>
+<input class="input" type="text" name="phone" value="{{p.family_phone}}">
+
+<label>Profile Image</label>
+<input class="input" type="file" name="profile_image">
+
+<label>Aadhar Card</label>
+<input class="input" type="file" name="aadhar">
+
+<label>RC Book</label>
+<input class="input" type="file" name="rc_book">
+
+<label>License Document</label>
+<input class="input" type="file" name="license_doc">
+
+<label>Insurance Document</label>
+<input class="input" type="file" name="insurance_doc">
+
+<button class="btn">Update Profile</button>
+
+</div>
+
+</form>
+
+<div class="footer">
+Suraksha QR Safety System
+</div>
+
+</div>
+
+</body>
+</html>
