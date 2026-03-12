@@ -72,7 +72,7 @@ def create_profile(request):
         profile.save()
 
         # QR generate
-        qr_data = f"http://127.0.0.1:8000/emergency/{profile.id}/"
+        qr_data = f"https://qr-suraksha-3.onrender.com//emergency/{profile.id}/"
         img = qrcode.make(qr_data)
 
         os.makedirs("media/qr_codes", exist_ok=True)
